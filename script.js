@@ -1,14 +1,15 @@
-console.log("Gabriel Arroyo");
+var nombre = "Gabriel Arroyo";
+console.log("Hola, mi nombre es " + nombre);
 
-function ajustarResponsive() {
-    const container = document.querySelector('.container');
-    if (window.innerWidth < 600) {
-        container.style.backgroundColor = '#ffefef'; 
+const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+function manejarCambio(e) {
+    if (e.matches) {
+        console.log('Vista móvil');
     } else {
-        container.style.backgroundColor = '#e5f7ff';
+        console.log('Vista escritorio');
     }
 }
 
-window.addEventListener('resize', ajustarResponsive);
-
-ajustarResponsive();
+mediaQuery.addListener(manejarCambio);
+manejarCambio(mediaQuery); // Ejecutar una vez al cargar
