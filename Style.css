@@ -135,3 +135,16 @@ footer p {
     font-size: 1em;
     color: #333;
 }
+
+:root {
+    --main-bg-color: white;
+}  
+@media (max-width: 768px) {
+    :root {
+--main-bg-color: lightblue;
+    }
+}
+
+body {
+    background-color: var(--main-bg-color);
+}
